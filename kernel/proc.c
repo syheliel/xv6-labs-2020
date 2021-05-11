@@ -295,6 +295,7 @@ fork(void)
 
   np->state = RUNNABLE;
 
+  safestrcpy(np->mask,p->mask,sizeof(p->mask));
   release(&np->lock);
 
   return pid;
